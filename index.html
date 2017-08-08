@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Huehuetenango</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jquery.lettering.js"></script>
+<link type="text/css" rel="stylesheet" href="css/normalize.css" />
+<style type="text/css">
+	body {
+		background: #000;
+		color: #fee;
+		font-family: "Times New Roman";
+	}
+	a, a:hover, a:visited, a:active {
+		color: #fee;
+	}
+	#description {
+		width: 60%;
+		max-width: 450px;
+		margin: 15px auto;
+	}
+	.signature {
+		float: right;
+	}
+	#flavors {
+		margin: 5px auto;
+		width: 100%;
+		text-align: center;
+	}
+	#flavors a {
+		display: inline-block;
+		border: 1px #fee solid;
+		margin: 5px;
+		padding: 10px;
+	}
+	.huehue {
+		display: block;
+		border: 3px rgb(248, 69, 100) solid;
+		position: relative;
+		margin: 0 auto 8%;
+		padding: 2%;
+		width: 450px;
+		font-size: 400%;
+		text-align: center;
+	}
+	.char1 {
+		font-size: 470%;
+	}
+	.char1, .char4 {
+		color: rgb(102, 45, 7);
+	}
+	.char2, .char5 {
+		color: rgb(154, 123, 235);
+	}
+	.char3, .char6, .char8 {
+		color: rgb(248, 139, 0);
+	}
+	.char7 {
+		color: rgb(252, 252, 37);
+	}
+	.char9, .char11 {
+		color: rgb(69, 233, 62);
+	}
+	.char10 {
+		color: rgb(250, 65, 19);
+	}
+	.char12 {
+		color: rgb(129, 126, 122);
+	}
+	.char2, .char3, .char4, .char5, .char6 {
+		position: relative;
+		bottom: 129px;
+		right: 82px;
+	}
+	.char7, .char8, .char9, .char10, .char11, .char12, .char13 {
+		position: relative;
+		bottom: 98px;
+		right: 250px;
+	}
+	.char2, .char3, .char5, .char6 {
+		font-size: 135%;
+	}
+	.char4 {
+		text-transform: uppercase;
+		font-size: 92%;
+	}
+	.char7, .char9, .char11, .char12 {
+		text-transform: uppercase;
+		font-size: 60%;
+	}
+	.char8, .char10, .char13 {
+		font-size: 90%;
+	}
+</style>
+</head>
+<body>
+<div id="flavors">
+	<a id="drink" href="#drink">Take a drink</a>
+	<a id="clear" href="#clear">Cleanse your palate</a>
+	<a href="http://www.feistygoatcoffee.com">Feisty Goat</a>
+</div><br />
+<div>
+	<h1 class="huehue" style="display:none;">Huehuetenango</h1>
+</div>
+<div id="description">
+	<p>As I was taking my first taste of the Feisty Goat Huehuetenango, giving my initial impressions, my fiancée pointed out to me that I may be biased, and not an ideal taster for the coffee.</p>
+	<p>I have synaesthesia, a condition that causes my senses to be wired differently. Synaesthesia is different for everyone, with some commonalities, and for me I see colors when I see words or letters. My fiancée was suggesting that the flavors I thought I tasted may be influenced by the colors I see when I think of the word "Huehuetenango."</p>
+	<p>To illustrate this point, I made a piece in which I took the word "Huehuetenango" and attempted to give the letters the same colors as I see them. This is particularly difficult because they aren't always solid colors, and sometimes they have textures or seem to fade between two or three colors. I also put a border around the word to represent one of the main colors that I see with the word, despite it not being one of the colors of the letters.</p>
+	<p>It is designed for viewing on a desktop computer. I imagine it's is best with a cup of Feisty Goat Huehuetenango, but maybe you should take a sip before you begin, so it doesn't start you off biased.</p>
+	<p class="signature">Alexander Ferguson<br />of <a href="http://www.echonotation.com">Echonotation</a></p>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".huehue").lettering();
+		$("#drink").click(function(e){
+			if ($("#description").css("display") != "none") {
+				$("#description").fadeOut(function() {
+					$(".huehue").slideDown();
+				});
+			} else {
+				$(".huehue").slideDown();
+			}
+			e.preventDefault();
+		});
+		$("#clear").click(function(e){
+			$(".huehue").slideUp();
+			e.preventDefault();
+		});
+	});
+</script>
+</body>
+</html>
