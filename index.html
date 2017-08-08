@@ -109,13 +109,14 @@
 	<p>I have synaesthesia, a condition that causes my senses to be wired differently. Synaesthesia is different for everyone, with some commonalities, and for me I see colors when I see words or letters. My fiancée was suggesting that the flavors I thought I tasted may be influenced by the colors I see when I think of the word "Huehuetenango."</p>
 	<p>To illustrate this point, I made a piece in which I took the word "Huehuetenango" and attempted to give the letters the same colors as I see them. This is particularly difficult because they aren't always solid colors, and sometimes they have textures or seem to fade between two or three colors. I also put a border around the word to represent one of the main colors that I see with the word, despite it not being one of the colors of the letters.</p>
 	<p>It is designed for viewing on a desktop computer. I imagine it's is best with a cup of Feisty Goat Huehuetenango, but maybe you should take a sip before you begin, so it doesn't start you off biased.</p>
-	<p class="signature">Alexander Ferguson<br />of <a href="http://www.echonotation.com">Echonotation</a></p>
+	<p class="signature">Alexander Ferguson</p>
 </div>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".huehue").lettering();
 		$("#drink").click(function(e){
+			e.preventDefault();
 			if ($("#description").css("display") != "none") {
 				$("#description").fadeOut(function() {
 					$(".huehue").slideDown();
@@ -123,11 +124,12 @@
 			} else {
 				$(".huehue").slideDown();
 			}
-			e.preventDefault();
 		});
 		$("#clear").click(function(e){
-			$(".huehue").slideUp();
 			e.preventDefault();
+			$(".huehue").slideUp(function() {
+				$("#description").fadeIn();
+			});
 		});
 	});
 </script>
